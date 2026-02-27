@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Design Planner</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Home Design Planning App</h1>
+      <p>Plan your home structure, room count, and interior aesthetic in one place.</p>
+    </header>
+
+    <section class="card">
+      <h2>1) Home Structure</h2>
+      <div class="grid two-col">
+        <label>
+          Home Name
+          <input id="homeName" type="text" placeholder="e.g., Green Villa" />
+        </label>
+        <label>
+          Total Floor Area (sq ft)
+          <input id="area" type="number" min="100" step="10" placeholder="e.g., 2400" />
+        </label>
+        <label>
+          Number of Floors
+          <input id="floors" type="number" min="1" max="5" value="1" />
+        </label>
+        <label>
+          Number of Rooms
+          <input id="roomCount" type="number" min="1" max="30" value="3" />
+        </label>
+      </div>
+      <button id="buildRooms" class="secondary">Create Room Inputs</button>
+    </section>
+
+    <section class="card">
+      <h2>2) Room Planning</h2>
+      <div id="roomContainer" class="room-container"></div>
+    </section>
+
+    <section class="card">
+      <h2>3) Aesthetic & Interiors</h2>
+      <div class="grid two-col">
+        <label>
+          Overall Aesthetic
+          <select id="aesthetic">
+            <option>Modern Minimalist</option>
+            <option>Contemporary Luxury</option>
+            <option>Scandinavian</option>
+            <option>Industrial</option>
+            <option>Classic Traditional</option>
+            <option>Bohemian</option>
+          </select>
+        </label>
+        <label>
+          Primary Interior Color Palette
+          <input id="palette" type="text" placeholder="e.g., White, Beige, Olive" />
+        </label>
+        <label>
+          Preferred Materials
+          <input id="materials" type="text" placeholder="e.g., Wood, Marble, Steel" />
+        </label>
+        <label>
+          Estimated Budget (USD)
+          <input id="budget" type="number" min="1000" step="500" placeholder="e.g., 150000" />
+        </label>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button id="generatePlan">Generate Home Plan Summary</button>
+      <button id="reset" class="secondary">Reset</button>
+    </section>
+
+    <section class="card">
+      <h2>Plan Summary</h2>
+      <article id="summary" class="summary empty">Your generated home plan summary will appear here.</article>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
